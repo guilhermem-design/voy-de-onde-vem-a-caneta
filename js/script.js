@@ -31,7 +31,7 @@ io.observe(el);
 function mountScrub(useScroll){
 var section=document.getElementById('heroScrub'),canvas=document.getElementById('heroCanvas');
 if(!section||!canvas)return;
-var ctx=canvas.getContext('2d'),cur=-1,TOTAL=122,PATH='https://cdn.jsdelivr.net/gh/guilhermem-design/voy-de-onde-vem-a-caneta@main/frames/pens/frame_',EXT=window.__webp?'webp':'jpg';
+var ctx=canvas.getContext('2d'),cur=-1,TOTAL=122,PATH='https://cdn.jsdelivr.net/gh/guilhermem-design/voy-de-onde-vem-a-caneta@2a4017a/frames/pens/frame_',EXT=window.__webp?'webp':'jpg';
 var step=(useScroll&&__mob)?2:1,nums=[];for(var i=1;i<=TOTAL;i+=step)nums.push(i);if(nums[nums.length-1]!==TOTAL)nums.push(TOTAL);
 var N=nums.length,imgs=new Array(N),started=false;
 var ov=document.getElementById('scrubOverlay'),chk=section.querySelector('.scrub-check'),circ=section.querySelector('.scrub-check circle'),pth=section.querySelector('.scrub-check path'),ltr=section.querySelector('.scrub-letter');
@@ -71,7 +71,7 @@ ScrollTrigger.create({trigger:wrap,start:'top bottom',end:'bottom top',scrub:0.5
 if(reduce || !window.gsap){
 document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('in')});
 mountScrub(false);
-mountContainScrub('boxScrub','https://cdn.jsdelivr.net/gh/guilhermem-design/voy-de-onde-vem-a-caneta@main/frames/caixa/frame_',121,false);
+mountContainScrub('boxScrub','https://cdn.jsdelivr.net/gh/guilhermem-design/voy-de-onde-vem-a-caneta@2a4017a/frames/caixa/frame_',121,false);
 document.querySelectorAll('.voice-media video').forEach(function(v){v.play().catch(function(){})});
 }else{
 try{lenis=new Lenis({duration:1.15,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:true});window.lenis=lenis;}catch(e){}
@@ -107,7 +107,7 @@ gsap.fromTo(span,{y:-travel*0.45},{y:travel*0.55,ease:'none',scrollTrigger:{trig
 });
 }
 mountScrub(true);
-mountContainScrub('boxScrub','https://cdn.jsdelivr.net/gh/guilhermem-design/voy-de-onde-vem-a-caneta@main/frames/caixa/frame_',121,true);
+mountContainScrub('boxScrub','https://cdn.jsdelivr.net/gh/guilhermem-design/voy-de-onde-vem-a-caneta@2a4017a/frames/caixa/frame_',121,true);
 gsap.fromTo('#penHeader',{yPercent:-11},{yPercent:11,ease:'none',scrollTrigger:{trigger:'#confirme',start:'top bottom',end:'bottom top',scrub:true}});
 document.querySelectorAll('.voice-media').forEach(function(wrap){
 var v=wrap.querySelector('video'),badge=wrap.querySelector('.vmute');
